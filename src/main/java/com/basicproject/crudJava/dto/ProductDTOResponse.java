@@ -9,9 +9,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 public class ProductDTOResponse {
+    private String message;
     private Long id;
     private String productName;
     private String typeProduct;
@@ -19,5 +19,18 @@ public class ProductDTOResponse {
     private int quantityOfProduct;
     private String descriptionOfProduct;
 
+
+public static ProductDTOResponse fromEntity(Product product){
+    ProductDTOResponse dtoResponse = new ProductDTOResponse();
+    dtoResponse.setMessage("Produto Cadastrado com sucesso!");
+    dtoResponse.setId(product.getId());
+    dtoResponse.setProductName(product.getProductName());
+    dtoResponse.setTypeProduct(product.getTypeProduct());
+    dtoResponse.setProductPrice(product.getProductPrice());
+    dtoResponse.setQuantityOfProduct(product.getQuantityOfProduct());
+    dtoResponse.setDescriptionOfProduct(product.getDescriptionOfProduct());
+
+    return dtoResponse;
+}
 
 }

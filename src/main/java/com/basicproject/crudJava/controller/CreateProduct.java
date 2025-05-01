@@ -42,7 +42,7 @@ public ResponseEntity<?> createProduct(@RequestBody @Valid ProductDTORequest req
     Product productCreated = productRepository.save(product);
 
     //O cadastro estando Ok retorna a mensagem de sucesso (200)
-    return ResponseEntity.ok().body( Map.of("message", "Produto Cadastrado com sucesso!"));
+    return ResponseEntity.ok(ProductDTOResponse.fromEntity(productCreated));
 
 }
 
