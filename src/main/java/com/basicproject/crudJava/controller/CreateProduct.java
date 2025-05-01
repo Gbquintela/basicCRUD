@@ -19,13 +19,16 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/product")
-@AllArgsConstructor
+
 public class CreateProduct {
     private final ProductRepository productRepository;
 
+    public CreateProduct(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
 
-//Rota para cadastro do produto
+    //Rota para cadastro do produto
 @PostMapping("/create")
 
 //Passando os DTOS para verificar a informação e confirmaçãos dos dados

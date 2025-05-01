@@ -20,11 +20,11 @@ public class ProductDTORequest {
 
     @NotNull
     @Positive(message = "O preço não pode ser negativo!")
-    private double productPrice;
+    private Double productPrice;
 
     @NotNull
     @PositiveOrZero (message = "A quantidade não pode ser negativa!")
-    private int quantityOfProduct;
+    private Integer quantityOfProduct;
 
     @NotBlank(message = "A descrição do produto não pode ser vazia")
     @Size(max = 100, message = "O tamanho maximo e de 100 caracteres")

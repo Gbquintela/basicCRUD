@@ -15,8 +15,8 @@ public class ProductDTOResponse {
     private Long id;
     private String productName;
     private String typeProduct;
-    private double productPrice;
-    private int quantityOfProduct;
+    private Double productPrice;
+    private Integer quantityOfProduct;
     private String descriptionOfProduct;
 
 
