@@ -32,7 +32,7 @@ public class ProductDTORequest {
 
 
 
-    public Product toEntity (){
+    public Product toProduct (){
         Product product = new Product();
 
         product.setProductName(productName);

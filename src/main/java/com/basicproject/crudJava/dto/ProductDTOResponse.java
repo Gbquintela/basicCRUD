@@ -12,7 +12,6 @@ import lombok.Setter;
 
 public class ProductDTOResponse {
     private String message;
-    private Long id;
     private String productName;
     private String typeProduct;
     private Double productPrice;
@@ -23,7 +22,6 @@ public class ProductDTOResponse {
 public static ProductDTOResponse fromEntity(Product product){
     ProductDTOResponse dtoResponse = new ProductDTOResponse();
     dtoResponse.setMessage("Produto Cadastrado com sucesso!");
-    dtoResponse.setId(product.getId());
     dtoResponse.setProductName(product.getProductName());
     dtoResponse.setTypeProduct(product.getTypeProduct());
     dtoResponse.setProductPrice(product.getProductPrice());
