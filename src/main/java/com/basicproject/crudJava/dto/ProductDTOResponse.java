@@ -19,7 +19,7 @@ public class ProductDTOResponse {
     private String descriptionOfProduct;
 
 
-public static ProductDTOResponse fromEntity(Product product){
+public static ProductDTOResponse fromProduct(Product product){
     ProductDTOResponse dtoResponse = new ProductDTOResponse();
     dtoResponse.setMessage("Produto Cadastrado com sucesso!");
     dtoResponse.setProductName(product.getProductName());

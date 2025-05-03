@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/products")
 
 public class CreateProduct {
     private final CreateService createService;
