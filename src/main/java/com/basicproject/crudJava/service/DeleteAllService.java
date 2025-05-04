@@ -20,24 +20,19 @@ public class DeleteAllService {
         this.productRepository = productRepository;
     }
 
-    public ResponseEntity<String> deleteAllProducts(){
 
-        //Faço uma busca por todos os produtos cadastrados
-        List<Product> existingProduct = this.productRepository.findAll();
 
-        //Verificação se a lista esta vazia, Se vazia retorna um erro
-        if(existingProduct.isEmpty()){
 
-            return ResponseEntity
-                    .status(HttpStatus.NOT_FOUND)
-                    .body("Nenhum Produto encontrado.");
+    public boolean deleteAllProducts(){
+        List<Product> existingProducts = this.productRepository.findAll();
+        if(existingProducts.isEmpty()){
+
+            return  false;
+
         }
-
-        //Caso esteja com algum produto cadastrado, executo o metodo de exclusão de todos  os produtos
         productRepository.deleteAll();
+        return true;
 
-        //Retorno valor de sucesso 200.
-        return ResponseEntity.ok().body("Todos os produtos foram deletados!");
     }
 
 

@@ -2,6 +2,7 @@ package com.basicproject.crudJava.controller;
 
 
 import com.basicproject.crudJava.service.DeleteAllService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +23,13 @@ public class DeleteAllProduct {
 
     @DeleteMapping("/delete/all")
     public ResponseEntity<?> deleteAllProducts(){
+        boolean deleted = deleteAllService.deleteAllProducts();
 
-        // Delega toda a lógica para o serviço e retorna diretamente sua resposta
-        // O uso de <?> permite que o service retorne diferentes tipos de respostas
-       return deleteAllService.deleteAllProducts();
+        if(deleted){
+            return ResponseEntity.ok("Todos produtos foram deletados!");
+        } else {
+            return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Nenhum produto encontrado para deletar");
+        }
+       
     }
 }
