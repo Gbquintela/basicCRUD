@@ -6,14 +6,14 @@ O sistema implementa um CRUD (Create, Read, Update, Delete) de produtos, demonst
 
 ### 🔗 Endpoints da API
 
-| Método HTTP | Endpoint          | Descrição                                                |
-|-------------|-------------------|------------------------------------------------------------|
-| `POST`      | `/products`      | Cria um novo produto. Espera um `ProductDTORequest` no body. |
-| `GET`       | `/products/{id}` | Retorna os dados de um produto específico pelo seu ID.     |
-| `GET`       | `/products`      | Lista todos os produtos cadastrados.                       |
-| `PUT`       | `/products/{id}` | Atualiza os dados de um produto existente pelo seu ID. Espera um `Product` no body. |
-| `DELETE`    | `/products/{id}` | Remove um produto específico pelo seu ID.                |
-| `DELETE`    | `/products`      | Remove **todos** os produtos.                             |
+| Método HTTP | Endpoint              | Descrição                                                                   |
+|-------------|-----------------------|-----------------------------------------------------------------------------|
+| `POST`      | `/products/create`    | Cria um novo produto. Espera um `ProductDTORequest` no corpo da requisição.   |
+| `GET`       | `/products/reportById/{id}` | Retorna os dados de um produto específico com o ID fornecido.               |
+| `GET`       | `/products/reportAll`   | Lista todos os produtos cadastrados no sistema.                              |
+| `PUT`       | `/products/update/{id}` | Atualiza os dados do produto com o ID fornecido. Espera um `Product` no corpo da requisição. |
+| `DELETE`    | `/products/delete/{id}` | Remove o produto específico com o ID fornecido.                             |
+| `DELETE`    | `/products/delete/all` | Remove **todos** os produtos do sistema. **Use com cautela!** |
 
 ### 🛠 Tecnologias Utilizadas
 
@@ -50,22 +50,3 @@ O projeto segue uma arquitetura com as seguintes camadas principais:
 * Uso do Swagger como ferramenta essencial para APIs backend-centric.
 * Implementação de DTOs para melhorar a organização e validação dos dados transferidos.
 * Organização da lógica de negócios em classes de serviço dedicadas.
-
-### ✨ Melhorias Realizadas (Baseado nas Rotas do Swagger):
-
-* Tabela organizada com todas as rotas e seus propósitos.
-* Destaque visual para métodos HTTP.
-* Linguagem técnica mas acessível para outros desenvolvedores.
-* Agrupamento lógico das informações.
-* **Inclusão da explicação e uso de DTOs para requisição (`ProductDTORequest`) e resposta (`ProductDTOResponse`).**
-* **Demonstração da utilização de classes de serviço (`UpdateService`, `DeleteAllService`, `DeleteByIdService`, `ReportAllService`, `ReportByIdService`) para encapsular a lógica de negócios.**
-* **As rotas foram atualizadas para refletir as encontradas no seu Swagger:**
-
-| Título no Swagger | Método HTTP | Endpoint            | Descrição                                                                  |
-|-------------------|-------------|---------------------|----------------------------------------------------------------------------|
-| `update-product`  | `POST`      | `/products/update/{id}` | Atualiza os detalhes do produto com o ID especificado. Envie os dados atualizados no corpo da requisição. |
-| `create-product`  | `POST`      | `/products/create`    | Cria um novo produto. Envie os dados do produto no corpo da requisição.    |
-| `report-by-id`    | `GET`       | `/products/reportById/{id}` | Retorna os detalhes do produto com o ID especificado.                      |
-| `report-all-products`| `GET`       | `/products/reportAll`   | Retorna uma lista de todos os produtos.                                  |
-| `delete-by-id`    | `DELETE`    | `/products/delete/{id}` | Exclui o produto com o ID especificado.                                  |
-| `delete-all-product`| `DELETE`    | `/products/delete/all` | Exclui todos os produtos. **Use com cautela!** |
