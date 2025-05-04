@@ -17,7 +17,12 @@ public class ReportAllService {
         this.productRepository = productRepository;
     }
 
+    /**
+     * Metodo para mostrar todos os produtos
+
+     */
     public List<Product> getAllProducts(){
+        //Retorna todos os produtos cadastrados
         return productRepository.findAll();
     }
 }

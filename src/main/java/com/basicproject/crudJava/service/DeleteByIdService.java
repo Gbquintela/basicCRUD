@@ -15,12 +15,19 @@ public class DeleteByIdService {
     }
 
 
-    public boolean deleteProductById(Long id){
-
-        if(productRepository.existsById(id)){
+    /**
+     * Metodo para deletar um produto pelo ID
+     * @param id ID do produto a ser deletado
+     * @return true se o produto foi deletado, false se o produto não foi encontrado
+     */
+    public boolean deleteProductById(Long id) {
+        // Verifica se o produto existe antes de tentar deletar
+        if (productRepository.existsById(id)) {
+            // Se existir, deleta o produto
             productRepository.deleteById(id);
-            return true;
+            return true; // Retorna sucesso
         }
-            return false;
+        // Se não existir, retorna false
+        return false;
     }
 }

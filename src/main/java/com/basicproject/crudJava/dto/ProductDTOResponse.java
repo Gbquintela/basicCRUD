@@ -9,7 +9,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
+// DTO (Data Transfer Object) para a resposta de informações do produto.
 public class ProductDTOResponse {
     private String message;
     private String productName;
@@ -17,8 +17,7 @@ public class ProductDTOResponse {
     private Double productPrice;
     private Integer quantityOfProduct;
     private String descriptionOfProduct;
-
-
+    // Metodo estático para converter uma entidade Product em um ProductDTOResponse.
 public static ProductDTOResponse fromProduct(Product product){
     ProductDTOResponse dtoResponse = new ProductDTOResponse();
     dtoResponse.setMessage("Produto Cadastrado com sucesso!");
