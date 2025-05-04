@@ -17,12 +17,11 @@ import java.util.List;
 @RequestMapping("/products")
 public class ReportAllProducts {
 
-    private final ProductRepository productRepository;
+
     private final ReportAllService reportAllService;
 
 
-    public ReportAllProducts(ProductRepository productRepository, ReportAllService reportAllService) {
-        this.productRepository = productRepository;
+    public ReportAllProducts( ReportAllService reportAllService) {
         this.reportAllService = reportAllService;
     }
 

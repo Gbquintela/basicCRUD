@@ -30,6 +30,6 @@ public class DeleteAllProduct {
         } else {
             return  ResponseEntity.status(HttpStatus.NOT_FOUND).body("Nenhum produto encontrado para deletar");
         }
-       
+
     }
 }
