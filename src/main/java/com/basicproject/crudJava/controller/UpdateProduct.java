@@ -18,7 +18,7 @@ public class UpdateProduct {
     }
 
     // Endpoint para atualizar um produto específico através de uma requisição HTTP POST em "/products/update/{id}", onde {id} é o ID do produto a ser atualizado e os dados do produto atualizado são passados no corpo da requisição.
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public String updateProduct(@PathVariable Long id, @ModelAttribute Product product){
         try{
             // Chama o serviço para atualizar o produto com o ID e os dados fornecidos.
